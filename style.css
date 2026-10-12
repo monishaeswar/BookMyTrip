@@ -1,0 +1,874 @@
+
+/* =========================
+   1. RESET AND VARIABLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #28679f;
+    --dark-blue: #123d64;
+    --yellow: #ffcf20;
+    --light-gray: #eeeeee;
+    --text: #333333;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--light-gray);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* =========================
+   2. HEADER
+========================= */
+
+.header {
+    background: white;
+    min-height: 85px;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+    white-space: nowrap;
+}
+
+.logo span {
+    background: var(--blue);
+    color: white;
+    border-radius: 50%;
+    padding: 7px 4px;
+    font-size: 22px;
+}
+
+/* Phone support */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+    flex-wrap: nowrap;
+}
+
+.support {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.support strong {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+}
+
+.support strong i {
+    font-size: 17px;
+    color: #333;
+}
+
+.support small {
+    color: var(--blue);
+    font-size: 12px;
+}
+
+/* =========================
+   3. SEARCH BOX
+   Icon inside the box
+========================= */
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 220px;
+    height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background: white;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.search-box input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 5px 34px 5px 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 11px;
+}
+
+.search-box button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    color: var(--blue);
+}
+
+/* =========================
+   4. NAVIGATION BAR
+========================= */
+
+.navbar {
+    min-height: 46px;
+    padding: 0 5%;
+    background: var(--blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links > a,
+.nav-links > .nav-item > a {
+    display: block;
+    padding: 13px 0;
+    font-size: 13px;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-buttons button {
+    background: var(--yellow);
+    border: none;
+    padding: 7px 12px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Font Awesome hamburger menu */
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* =========================
+   5. HOTELS DROPDOWN
+========================= */
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 210px;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 4px 8px #0002;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #555;
+    padding: 10px;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu a:hover {
+    background: #f2f2f2;
+    color: var(--blue);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+/* =========================
+   6. HERO BANNER
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 440px;
+    margin-bottom: 75px;
+}
+
+.hero > img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 23%;
+    right: 8%;
+    width: min(380px, 40%);
+    background: rgba(35, 100, 157, 0.94);
+    color: white;
+    padding: 22px;
+}
+
+.hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.hero-content h3 {
+    font-size: 16px;
+}
+
+/* =========================
+   7. BOOKING FORM
+========================= */
+
+.booking-form {
+    position: absolute;
+    bottom: -55px;
+    left: 8%;
+    right: 8%;
+    background: white;
+    border: 5px solid #222;
+    padding: 0 12px 15px;
+}
+
+.booking-form h2 {
+    display: inline-block;
+    background: #222;
+    color: white;
+    padding: 7px 24px;
+    margin: -1px 0 12px -13px;
+    font-size: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns:
+        1.2fr 1.5fr 1.3fr 0.8fr 0.8fr 0.8fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.form-grid input,
+.form-grid select {
+    width: 100%;
+    min-width: 0;
+    height: 36px;
+    padding: 7px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.search-btn {
+    height: 36px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 3px;
+    background: #ed4242;
+    color: white;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background: #ca3030;
+}
+
+/* =========================
+   8. MAIN CONTENT
+========================= */
+
+.main-content {
+    padding: 15px 5% 35px;
+}
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+}
+
+.section-heading a,
+.blog a {
+    color: var(--blue);
+    font-size: 13px;
+}
+
+/* =========================
+   9. HOTEL CARDS
+========================= */
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.hotel-card {
+    background: white;
+    border: 1px solid #ddd;
+    min-width: 0;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hotel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px #00000018;
+}
+
+.hotel-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.hotel-info {
+    padding: 12px;
+}
+
+.hotel-info h3 {
+    font-size: 16px;
+}
+
+.hotel-info p {
+    font-size: 12px;
+    color: #777;
+    margin: 4px 0 10px;
+}
+
+.price {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.search-message {
+    margin-top: 15px;
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+
+/* =========================
+   10. HOT DEALS
+========================= */
+
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.deal-card {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    color: white;
+    background: var(--dark-blue);
+}
+
+.deal-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.deal-card:hover img {
+    transform: scale(1.05);
+}
+
+.deal-text {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 20px;
+    background: linear-gradient(transparent, #000000d9);
+}
+
+.deal-text span {
+    color: var(--yellow);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.deal-text h3 {
+    font-size: 22px;
+    margin: 5px 0;
+}
+
+/* =========================
+   11. LATEST BLOG
+========================= */
+
+.blog {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 22px;
+    margin-bottom: 5px;
+}
+
+.blog h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.blog p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   12. FOOTER
+========================= */
+
+.footer {
+    background: white;
+    padding: 35px 5%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    font-size: 12px;
+}
+
+.footer h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.footer a {
+    display: block;
+    color: #666;
+    margin-bottom: 7px;
+}
+
+.footer a:hover {
+    color: var(--blue);
+}
+
+/* =========================
+   13. SOCIAL MEDIA ICONS
+========================= */
+
+.social-section h3 {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 7px;
+}
+
+.footer .social-icons a {
+    display: inline-flex;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #666;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0;
+    transition: background 0.3s;
+}
+
+.footer .social-icons a:hover {
+    background: var(--blue);
+    color: white;
+}
+
+/* =========================
+   14. SUBSCRIBE FORM
+========================= */
+
+.subscribe-form {
+    display: flex;
+    margin-top: 8px;
+}
+
+.subscribe-form input {
+    width: 100%;
+    min-width: 0;
+    padding: 9px;
+    border: 1px solid #ddd;
+}
+
+.subscribe-form button {
+    border: none;
+    background: var(--blue);
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.subscribe-form button:hover {
+    background: var(--dark-blue);
+}
+
+/* =========================
+   15. COPYRIGHT
+========================= */
+
+.copyright {
+    grid-column: 1 / -1;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    color: #777;
+}
+
+/* =========================
+   16. TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+    .nav-links {
+        gap: 13px;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+
+    .hero {
+        margin-bottom: 135px;
+    }
+
+    .booking-form {
+        bottom: -115px;
+    }
+
+    .hotel-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hotel-card img {
+        height: 210px;
+    }
+
+    .header-right {
+        gap: 12px;
+    }
+
+    .search-box {
+        width: 190px;
+    }
+}
+
+/* =========================
+   17. MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+    .header {
+        padding: 15px 4%;
+        min-height: 75px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .logo span {
+        font-size: 19px;
+    }
+
+    .header-right {
+        gap: 0;
+    }
+
+    .support {
+        display: none;
+    }
+
+    .search-box {
+        width: 175px;
+    }
+
+    .search-box input {
+        font-size: 10px;
+    }
+
+    /* Mobile navigation */
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 7px 4%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links > a,
+    .nav-links > .nav-item > a {
+        padding: 10px;
+        border-top: 1px solid #ffffff30;
+    }
+
+    /* Mobile dropdown */
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .dropdown-menu a {
+        padding-left: 20px;
+    }
+
+    .nav-buttons {
+        margin-left: auto;
+    }
+
+    .nav-buttons button {
+        padding: 7px;
+        font-size: 10px;
+    }
+
+    /* Hero banner */
+
+    .hero {
+        min-height: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .hero > img {
+        height: 300px;
+    }
+
+    .hero-content {
+        top: 18px;
+        right: 4%;
+        width: 78%;
+        padding: 13px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+    }
+
+    .hero-content h3 {
+        font-size: 13px;
+    }
+
+    /* Booking form */
+
+    .booking-form {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: -15px 4% 25px;
+        padding: 0 10px 12px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .form-grid label {
+        font-size: 13px;
+    }
+
+    .form-grid input,
+    .form-grid select {
+        height: 40px;
+    }
+
+    .search-btn {
+        height: 42px;
+    }
+
+    /* Main content */
+
+    .main-content {
+        padding: 5px 4% 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 17px;
+    }
+
+    .section-heading a {
+        font-size: 11px;
+    }
+
+    .hotel-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .hotel-card img {
+        height: 220px;
+    }
+
+    /* Hot deals */
+
+    .deals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .deal-card {
+        height: 200px;
+    }
+
+    /* Footer */
+
+    .footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 25px 4%;
+        gap: 25px 15px;
+    }
+
+    .footer .social-icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 7px;
+    }
+
+    .footer .social-icons a {
+        display: inline-flex;
+        flex: 0 0 22px;
+        margin: 0;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
+}
+
+/* =========================
+   18. REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}

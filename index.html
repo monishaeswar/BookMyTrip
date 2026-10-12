@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyTrip - Hotel Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">bookmy<span>trip.</span></a>
+<div class="header-right">
+
+    <div class="support">
+        <strong>
+            <i class="fa-solid fa-phone"></i>
+            Call 24/7 Support
+        </strong>
+        <small>+91-6775869358</small>
+    </div>
+<div class="search-box">
+    <input type="search" placeholder="Search entire website...">
+
+    <button type="button" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</div>
+</div>
+</div>
+    </header>
+    <nav class="navbar">
+        <button class="menu-toggle" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <div class="nav-item dropdown">
+                <a href="#">Hotels</a>
+                <div class="dropdown-menu">
+                    <a href="#">Hotels in India</a>
+                    <a href="#">International Hotels</a>
+                    <a href="#">International Hostels</a>
+                    <a href="#">Popular Hotels in Asia</a>
+                    <a href="#">Popular Hotels in Europe</a>
+                    <a href="#">Activities</a>
+                    <a href="#">Hotel Deals of the Week</a>
+                </div>
+            </div>
+            <a href="#">Flights</a>
+            <a href="#">Vacations</a>
+            <a href="#">Hot Deals</a>
+            <a href="#">Travel Guides</a>
+            <a href="#">Blogs</a>
+        </div>
+
+        <div class="nav-buttons">
+            <button>Sign Up</button>
+            <button>My Account</button>
+        </div>
+    </nav>
+    <section class="hero">
+        <img
+            src="img6.jpg"
+            alt="Luxury hotel swimming pool">
+        <div class="hero-content">
+            <h1>Discover Tamil Nadu</h1>
+            <p>
+                Find beautiful hotels, relaxing resorts and amazing
+                holiday destinations.
+            </p>
+            <h3>Starting from ₹2,000 per night</h3>
+        </div>
+        <form class="booking-form" id="bookingForm">
+            <h2>Book Your Trip</h2>
+
+            <div class="form-grid">
+                <label>
+                    What?
+                    <select id="hotelType">
+                        <option value="Hotels">Hotels</option>
+                        <option value="Resorts">Resorts</option>
+                        <option value="Homestays">Homestays</option>
+                    </select>
+                </label>
+
+                <label>
+                    Where?
+                    <select id="location">
+                        <option value="">Select location</option>
+                        <option>Chennai</option>
+                        <option>Ooty</option>
+                        <option>Kodaikanal</option>
+                        <option>Madurai</option>
+                        <option>Coimbatore</option>
+                        <option>Mahabalipuram</option>
+                    </select>
+                </label>
+
+                <label>
+                    When?
+                    <input type="date" id="checkIn" required>
+                </label>
+
+                <label>
+                    Rooms
+                    <select id="rooms">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </label>
+
+                <label>
+                    Adults
+                    <select id="adults">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </label>
+
+                <label>
+                    Children
+                    <select id="children">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </label>
+
+                <button type="submit" class="search-btn">Search</button>
+            </div>
+        </form>
+    </section>
+    <main class="main-content">
+        <section class="section">
+            <div class="section-heading">
+                <h2>Popular Hotels in Tamil Nadu</h2>
+                <a href="#">View All →</a>
+            </div>
+
+            <div class="hotel-grid" id="hotelGrid">
+
+                <article class="hotel-card" data-location="Chennai">
+                    <img src="img3.jpg"
+                        alt="Luxury hotel in Chennai">
+                    <div class="hotel-info">
+                        <h3>Chennai Grand Hotel</h3>
+                        <p>Chennai, Tamil Nadu</p>
+                        <span class="price">₹3,000 / night</span>
+                    </div>
+                </article>
+
+                <article class="hotel-card" data-location="Ooty">
+                    <img
+                        src="img7.jpg"
+                        alt="Mountain resort in Ooty"
+                    >
+                    <div class="hotel-info">
+                        <h3>Ooty Hill Resort</h3>
+                        <p>Ooty, Tamil Nadu</p>
+                        <span class="price">₹2,500 / night</span>
+                    </div>
+                </article>
+
+                <article class="hotel-card" data-location="Kodaikanal">
+                    <img
+                        src="img5.jpg"
+                        alt="Resort near Kodaikanal"
+                    >
+                    <div class="hotel-info">
+                        <h3>Kodai Lake Resort</h3>
+                        <p>Kodaikanal, Tamil Nadu</p>
+                        <span class="price">₹3,200 / night</span>
+                    </div>
+                </article>
+
+                <article class="hotel-card" data-location="Madurai">
+                    <img
+                        src="images.jpg"
+                        alt="Comfortable hotel in Madurai"
+                    >
+                    <div class="hotel-info">
+                        <h3>Madurai Heritage Stay</h3>
+                        <p>Madurai, Tamil Nadu</p>
+                        <span class="price">₹2,000 / night</span>
+                    </div>
+                </article>
+
+                <article class="hotel-card" data-location="Coimbatore">
+                    <img
+                        src="img2.jpg"
+                        alt="Modern hotel in Coimbatore"
+                    >
+                    <div class="hotel-info">
+                        <h3>Coimbatore Comfort</h3>
+                        <p>Coimbatore, Tamil Nadu</p>
+                        <span class="price">₹2,800 / night</span>
+                    </div>
+                </article>
+
+                <article class="hotel-card" data-location="Mahabalipuram">
+                    <img
+                        src="img1.jpg"
+                        alt="Seaside resort"
+                    >
+                    <div class="hotel-info">
+                        <h3>Sea Breeze Resort</h3>
+                        <p>Mahabalipuram, Tamil Nadu</p>
+                        <span class="price">₹3,500 / night</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <p id="searchMessage" class="search-message" role="status"></p>
+        </section>
+        <section class="section">
+            <div class="section-heading">
+                <h2>Hot Deals</h2>
+                <a href="#">Explore Deals →</a>
+            </div>
+
+            <div class="deals-grid">
+                <article class="deal-card">
+                    <img
+                        src="img 8.jpg"
+                        alt="Beach holiday"
+                    >
+                    <div class="deal-text">
+                        <span>LIMITED OFFER</span>
+                        <h3>Beach Holiday Special</h3>
+                        <p>Packages starting at ₹5,999</p>
+                    </div>
+                </article>
+
+                <article class="deal-card">
+                    <img
+                        src="img 9.jpg"
+                        alt="Mountain holiday"
+                    >
+                    <div class="deal-text">
+                        <span>WEEKEND DEAL</span>
+                        <h3>Mountain Escape</h3>
+                        <p>Packages starting at ₹4,499</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="blog">
+            <h2>Latest Travel Blogs</h2>
+            <p>Explore the best places to visit in Tamil Nadu.</p>
+            <a href="#">Read Travel Guides →</a>
+        </section>
+    </main>
+    <footer class="footer">
+        <div>
+            <h3>Company</h3>
+            <a href="#">About Us</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Careers</a>
+        </div>
+        <div>
+            <h3>Customer Support</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="#">Help Centre</a>
+        </div>
+        <div class="social-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a><a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3>Deals and Offers</h3>
+                <form id="subscribeForm" class="subscribe-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="subscribeMessage" role="status"></p>
+            </div>
+            <p class="copyright">
+                © 2026 BookMyTrip.
+            </p>
+        </footer>
+        <script src="script.js"></script>
+</body>    
+</html>
